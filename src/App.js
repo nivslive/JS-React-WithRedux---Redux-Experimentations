@@ -23,8 +23,8 @@ function App() {
       <button onClick={increment}> Increment </button>
       <button onClick={decrement}> Decrement </button>
       <button onClick={add(25)}> Add 25 </button>
-      <button onClick={add(50)}> Add 25 </button>
-      <button onClick={add(100)}> Add 25 </button>
+      <button onClick={add(50)}> Add 50 </button>
+      <button onClick={add(100)}> Add 100 </button>
     </div>
   );
 }
