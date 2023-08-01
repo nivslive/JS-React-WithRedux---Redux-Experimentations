@@ -1,30 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 import { useSelector, useDispatch } from 'react-redux';
+import { actions } from './store/index';
 function App() {
-  const counter = useSelector((state) => state.counter);
+  const counter = useSelector((state) => state.counter );
   const dispatch = useDispatch();
+
   const increment = () => {
-    dispatch({type: "INCREMENT"});
+    dispatch(actions.increment());
+    // console.log(counter)
   };
 
   const decrement = () => {
-    dispatch({type: "DECREMENT"});
+    dispatch(actions.decrement());
+    // console.log(counter)
   };
 
-  const add = (quantify) => {
-    dispatch({type: "ADD", payload: quantify});
+  const add = () => {
+    dispatch(actions.addBy(10));
+    // console.log(counter)
   }
   return (
     <div>
       <h1> Counter App </h1>
       <h2> {counter} </h2>
-      <button onClick={increment}> Increment </button>
-      <button onClick={decrement}> Decrement </button>
-      <button onClick={add(25)}> Add 25 </button>
-      <button onClick={add(50)}> Add 50 </button>
-      <button onClick={add(100)}> Add 100 </button>
+      <button onClick={() => increment()}> Increment </button>
+      <button onClick={() => decrement()}> Decrement </button>
+      <button onClick={() => add()}> Add 10 </button>
     </div>
   );
 }
